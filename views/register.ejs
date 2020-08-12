@@ -1,0 +1,31 @@
+
+<%- include("./partials/header") %> 
+
+<div class="container">
+    <h1 class="display-3 text-center">
+        Register on YelpCamp
+    </h1>
+    <div style="width: 30%; margin: 0 auto;">
+        <form action="/register" method="POST">
+
+            <div class="form-group">
+                <input type="text" name="username" placeholder="username" class="form-control  mt-5" id="">
+            </div>
+        
+        
+            <div class="form-group">
+              <input type="password" class="form-control mt-4" name="password" id="" placeholder="password" required>
+            </div>
+        
+            <div class="form-group">
+                <button class="btn btn-info mt-3 mb-4 btn-block">Log In</button>    
+                </div>
+        
+            
+        </form>
+    </div>
+   
+</div>
+
+
+<%- include("./partials/footer") %> 

@@ -1,0 +1,80 @@
+<%- include("../partials/header") %> 
+<div class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-md-3 md-3">
+            <div class="list-group" >
+                <li class="list-group-item active btn-success">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+
+      
+            <div class="card" style="width: 70%; height: auto;">
+                <img src="<%= ground.image %> " style="height: 100%; ">
+                <div class="card-body">
+                  <h5 class="card-title">
+                      <a href="#"><%= ground.name %> </a>
+                  </h5>
+                 
+                  
+                </div>
+                <p class="card-text pl-3 pr-3"><%= ground.description %> </p>
+                <p class="lead"><em class="ml-3">
+                    Submitted by <%= ground.author.username %> </p>
+
+                </em>
+                <% if(currentUser && ground.author.id.equals(currentUser._id)){ %> 
+                <div class="mb-2 ml-2">
+                    <a href="/campgrounds/<%= ground._id %>/edit " class="btn btn-warning ">EDIT</a>
+                </div>
+
+                <form action="/campgrounds/<%= ground._id %>?_method=DELETE" id="delete" method="POST" >
+                <button class="mb-2 ml-2 btn btn-danger">DELETE</button>
+                </form>
+            <% } %> 
+               
+              </div>
+        
+       
+        
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-3"></div>
+       
+        <div class="card bg-light" style="width: 70%;">
+         
+            <div class="text-right mt-3 mr-3">
+                <a href="/campgrounds/<%= ground._id %>/comments/new " class="  btn btn-info">Add a Comment</a>
+            </div>
+            <div class="card-body">
+               
+                <% ground.comments.forEach((comment)=>{%>
+                    <div class="d-flex justify-content-between">
+                        <p ><strong><%= comment.author.username %></strong> </p>
+                        <span>10 Days ago</span>
+                    </div>
+                  <p class="mt-0"><%= comment.text %> </p>
+                  <div class="d-flex justify-content-start">
+                    <a href="/campgrounds/<%=ground._id %>/comments/<%= comment._id %>/edit"
+                        class="btn btn-sm btn-primary">Edit</a>
+                        <form action="/campgrounds/<%= ground._id %>/comments/<%=comment._id%>?_method=DELETE" id="delete" method="POST" >
+                           <button class="ml-2 btn btn-danger btn-sm">DELETE</button>
+                           </form>
+                  </div>
+                  
+               <% }) %> 
+            </div>
+          </div>
+       
+
+    </div>
+
+</div>
+<a href="/campgrounds">Go back</a>
+
+<%- include("../partials/footer") %>
+
