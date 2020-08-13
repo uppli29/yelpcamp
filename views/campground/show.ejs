@@ -58,6 +58,8 @@
                         <span>10 Days ago</span>
                     </div>
                   <p class="mt-0"><%= comment.text %> </p>
+
+                  <% if(currentUser && comment.author.id.equals(currentUser.id)){ %>
                   <div class="d-flex justify-content-start">
                     <a href="/campgrounds/<%=ground._id %>/comments/<%= comment._id %>/edit"
                         class="btn btn-sm btn-primary">Edit</a>
@@ -65,6 +67,7 @@
                            <button class="ml-2 btn btn-danger btn-sm">DELETE</button>
                            </form>
                   </div>
+                 <% } %> 
                   
                <% }) %> 
             </div>
