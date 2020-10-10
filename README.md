@@ -1,11 +1,6 @@
 # yelpcamp
 
 ### This is the YelpCamp project created from the complete web development bootcamp by  Colt Steele
-
-## This is version 10.0
-
-### using mongoose as database, expressjs.
-
 ## How to run
 ### 1.Downoload this repo
 ### 2.Run command npm install
