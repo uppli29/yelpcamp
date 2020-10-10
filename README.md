@@ -5,5 +5,5 @@
 ### 1.Downoload this repo
 ### 2.Run command npm install
 ### 3.start local mongodb server
-### 4.Run command node qpp.js or nodemon (if you installed nodemon)
+### 4.Run command node app.js or nodemon (if you installed nodemon)
 ### 5.Go to localhost:5000 on browser
